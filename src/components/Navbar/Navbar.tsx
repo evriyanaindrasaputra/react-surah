@@ -6,10 +6,15 @@ const Navbar: React.FC = () => {
     setValue(e.target.value)
   }
   return (
-    <nav className='flex items-center justify-between px-2 py-4'>
-      <h1>Al Qur'an</h1>
-      <div>
-        <input type="text" aria-label='search surah' onChange={handleChange} value={value} name='search surah' placeholder='Search Surah' />
+    <nav className='flex items-center px-4 py-6 bg-gray-300/80'>
+      <h1 className='text-2xl font-bold'>Al Qur'an</h1>
+      <div className='relative h-full ml-10 w-64'>
+        <input
+          type="text" aria-label='search surah'
+          name='search surah' placeholder='Search Surah'
+          onChange={handleChange} value={value}
+          className='block w-full rounded-md bg-white text-left text-md  shadow-md focus:outline-none focus-visible:border-indigo-500 focus-visible:ring-2 focus-visible:ring-opacity-75  md:py-2 md:pl-10'
+        />
       </div>
     </nav>
   )

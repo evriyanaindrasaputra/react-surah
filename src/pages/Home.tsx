@@ -1,19 +1,18 @@
 import React from 'react'
-import Accordion from '~/components/Accordion'
 import {
   useQuery,
 } from 'react-query'
 import { getAllSurah } from '~/lib/surah'
+import Hero from '~/components/Hero/Hero'
 
-export default function Home() {
+const Home: React.FC = () => {
   // Queries
   const query = useQuery('ListSurah', getAllSurah)
   return (
     <>
-      <div>Home</div>
-      <Accordion title='accordion'>
-        <span>hello</span>
-      </Accordion>
+      <Hero />
     </>
   )
 }
+
+export default Home
