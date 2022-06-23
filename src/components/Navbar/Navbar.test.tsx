@@ -1,6 +1,6 @@
 import '@testing-library/jest-dom'
 import { expect, it, describe } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import Navbar from './Navbar'
 
 describe("Navbar", () => {
@@ -20,6 +20,19 @@ describe("Navbar", () => {
 
     // Assert 
     expect(inputFieldSurah).toBeDefined()
+  })
+
+  it("should show input from user act ", () => {
+    // Arrange 
+    render(<Navbar />)
+    const inputFieldSurah = screen.getByRole('textbox')
+    
+    // Assert
+    expect(inputFieldSurah).toHaveValue("")
+    fireEvent.change(inputFieldSurah, {target : {value : 'surah al-fatihah'}})
+    expect(inputFieldSurah).toHaveValue("surah al-fatihah")
+    fireEvent.change(inputFieldSurah, {target : {value : ''}})
+    expect(inputFieldSurah).toHaveValue("")
   })
 })
 
