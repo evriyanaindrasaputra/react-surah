@@ -1,0 +1,25 @@
+import '@testing-library/jest-dom'
+import { expect, it, describe } from "vitest";
+import { render, screen } from "@testing-library/react";
+import Navbar from './Navbar'
+
+describe("Navbar", () => {
+  it("should show title all the time", () => {
+    // Arrange
+    render(<Navbar />);
+    const headingText = screen.getByRole('heading', { name: /al qur'an/i })
+    
+    // Assert
+    expect(headingText).toBeDefined()
+  })
+
+  it("should show input element", () => {
+    // Arrange 
+    render(<Navbar />)
+    const inputFieldSurah = screen.getByRole('textbox')
+
+    // Assert 
+    expect(inputFieldSurah).toBeDefined()
+  })
+})
+
