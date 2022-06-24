@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 
 type SurahCardProps = {
   name : string,
@@ -10,7 +11,7 @@ type SurahCardProps = {
 
 const SurahCard : React.FC<SurahCardProps> = ({name, number, nameShort, translation, numberOfVerses}) => {
   return (
-    <div className='p-5 rounded-md hover:border-emerald-400 border-2 border-gray-500 flex gap-x-5 items-center bg-gray-500 justify-between cursor-pointer group'>
+    <Link to={`surah/${number}`}  className='p-5 rounded-md hover:border-emerald-400 border-2 border-gray-500 flex gap-x-5 items-center bg-gray-500 justify-between cursor-pointer group'>
       <div className='w-10 h-10 bg-gray-400 transition duration-100 ease-in rounded-sm rotate-45 flex justify-center items-center group-hover:bg-emerald-500 '>
         <div className='-rotate-45 '>
           <span className='text-gray-100 transition duration-100 ease-in  group-hover:text-gray-500 font-bold text-base md:text-lg'>{number}</span>
@@ -24,7 +25,7 @@ const SurahCard : React.FC<SurahCardProps> = ({name, number, nameShort, translat
         <p className=' text-gray-100 text-right font-semibold text-sm md:text-base'>{nameShort}</p>
         <span className='text-gray-300 group-hover:text-emerald-400 text-sm md:text-base'>{numberOfVerses} ayat</span>
       </div>
-    </div>
+    </Link>
   )
 }
 
