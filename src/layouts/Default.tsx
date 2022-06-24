@@ -2,6 +2,7 @@ import React from 'react'
 import { useOutlet } from "react-router-dom";
 import Footer from '~/components/Footer/Footer';
 import Navbar from '~/components/Navbar/Navbar';
+import Scroll from '~/components/Scroll/Scroll';
 
 export default function Default() {
   const outlet = useOutlet();
@@ -12,6 +13,7 @@ export default function Default() {
         {outlet}
       </main>
       <Footer />
+      <Scroll />
     </div>
   )
 }
