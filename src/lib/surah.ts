@@ -4,7 +4,7 @@ import fetcher from './fetcher'
 export async function getAllSurah() : Promise<Surah[]>{
   try {
     const {data} =  await fetcher.get('surah')
-    return data
+    return data.data
   } catch (error) {
     throw error
   }

@@ -21,7 +21,7 @@ const SurahCard : React.FC<SurahCardProps> = ({name, number, nameShort, translat
         <span className='text-gray-300 group-hover:text-emerald-400 text-base'>{translation}</span>
       </div>
       <div>
-        <p className=' text-gray-100 font-semibold text-base'>{nameShort}</p>
+        <p className=' text-gray-100 text-right font-semibold text-base'>{nameShort}</p>
         <span className='text-gray-300 group-hover:text-emerald-400 text-base'>{numberOfVerses} ayat</span>
       </div>
     </div>

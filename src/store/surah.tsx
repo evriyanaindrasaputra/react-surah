@@ -8,7 +8,7 @@ type SurahStore = {
 
 const useSurahStore = create<SurahStore>(set => ({
   surah: [],
-  setSurah: surah => set(state => ({ ...state, surah }))
+  setSurah: surah => set(prev => ({ ...prev, surah }))
 }));
 
 export default useSurahStore;
