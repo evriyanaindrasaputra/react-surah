@@ -17,14 +17,14 @@ const Hero: React.FC = () => {
         <div className='relative my-3 flex items-center text-gray-400 transition-all focus-within:text-gray-600'>
           <SearchIcon
             data-testid="search icon surah"
-            className=' absolute w-9 h-9  ml-2 cursor-pointer '
+            className=' absolute w-6 h-6  md:w-9 md:h-9 pl-2 cursor-pointer '
           />
           <input
             type="text" aria-label='search surah'
             name='search surah' placeholder='Search Surah'
             autoComplete='false'
             onChange={handleChange} value={value} 
-            className=' block w-full rounded-md bg-white text-left text-xl shadow-md focus:outline-none focus-visible:ring-gray-400  focus-visible:ring-opacity-75 focus-visible:ring-2  md:py-4 md:pl-12'
+            className=' block w-full pl-8 rounded-md bg-white text-left text-base md:text-xl shadow-md focus:outline-none focus-visible:ring-gray-400  focus-visible:ring-opacity-75 focus-visible:ring-2  md:py-4 md:pl-12'
           />
         </div>
       </div>
