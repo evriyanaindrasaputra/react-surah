@@ -23,7 +23,7 @@ const Home: React.FC = () => {
   return (
     <>
       <Hero />
-      <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
+      <div className='grid grid-cols-1 md:grid-cols-3 gap-4 py-4'>
         {
           !isLoading  &&
           filterSurah?.map(item =>

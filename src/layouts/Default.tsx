@@ -1,5 +1,6 @@
 import React from 'react'
 import { useOutlet } from "react-router-dom";
+import Footer from '~/components/Footer/Footer';
 import Navbar from '~/components/Navbar/Navbar';
 
 export default function Default() {
@@ -10,6 +11,7 @@ export default function Default() {
       <main className='max-w-6xl w-full px-2 md:px-0 mx-auto'>
         {outlet}
       </main>
+      <Footer />
     </div>
   )
 }
