@@ -7,7 +7,7 @@ export default function Default() {
   return (
     <div className='bg-gray-200/30 min-h-screen'>
       <Navbar />
-      <main className='max-w-7xl w-full px-2 md:px-0 mx-auto'>
+      <main className='max-w-6xl w-full px-2 md:px-0 mx-auto'>
         {outlet}
       </main>
     </div>

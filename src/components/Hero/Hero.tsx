@@ -21,7 +21,7 @@ const Hero: React.FC = () => {
     <div>
       <div className='w-full my-4'>
         <img src={Quran} alt="quran kareem" aria-label='quran kareem'
-          className=' w-full aspect-video max-h-80'
+          className=' w-full aspect-video max-h-60'
         />
         <div className='relative my-3 flex items-center text-gray-400 transition-all focus-within:text-gray-600'>
           <SearchIcon
@@ -33,7 +33,7 @@ const Hero: React.FC = () => {
             name='search surah' placeholder='Search Surah'
             autoComplete='false'
             onChange={handleChange} value={value}
-            className=' block w-full pl-8 rounded-md bg-white text-left text-base md:text-xl shadow-md focus:outline-none focus-visible:ring-gray-400  focus-visible:ring-opacity-75 focus-visible:ring-2  md:py-4 md:pl-12'
+            className=' block w-full pl-8 rounded-md bg-white text-left text-base md:text-lg shadow-md focus:outline-none focus-visible:ring-gray-400  focus-visible:ring-opacity-75 focus-visible:ring-2  md:py-4 md:pl-12'
           />
         </div>
       </div>
