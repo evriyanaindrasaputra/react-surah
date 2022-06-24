@@ -13,26 +13,26 @@ describe("Navbar", () => {
     expect(headingText).toBeDefined()
   })
 
-  it("should show input element", () => {
-    // Arrange 
-    render(<Navbar />)
-    const inputFieldSurah = screen.getByRole('textbox')
+  // it("should show input element", () => {
+  //   // Arrange 
+  //   render(<Navbar />)
+  //   const inputFieldSurah = screen.getByRole('textbox')
 
-    // Assert 
-    expect(inputFieldSurah).toBeDefined()
-  })
+  //   // Assert 
+  //   expect(inputFieldSurah).toBeDefined()
+  // })
 
-  it("should show input from user act ", () => {
-    // Arrange 
-    render(<Navbar />)
-    const inputFieldSurah = screen.getByRole('textbox')
+  // it("should show input from user act ", () => {
+  //   // Arrange 
+  //   render(<Navbar />)
+  //   const inputFieldSurah = screen.getByRole('textbox')
     
-    // Assert
-    expect(inputFieldSurah).toHaveValue("")
-    fireEvent.change(inputFieldSurah, {target : {value : 'surah al-fatihah'}})
-    expect(inputFieldSurah).toHaveValue("surah al-fatihah")
-    fireEvent.change(inputFieldSurah, {target : {value : ''}})
-    expect(inputFieldSurah).toHaveValue("")
-  })
+  //   // Assert
+  //   expect(inputFieldSurah).toHaveValue("")
+  //   fireEvent.change(inputFieldSurah, {target : {value : 'surah al-fatihah'}})
+  //   expect(inputFieldSurah).toHaveValue("surah al-fatihah")
+  //   fireEvent.change(inputFieldSurah, {target : {value : ''}})
+  //   expect(inputFieldSurah).toHaveValue("")
+  // })
 })
 

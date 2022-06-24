@@ -9,14 +9,15 @@ import useSurahStore from '~/store/surah'
 
 const Home: React.FC = () => {
   // store surah zustand 
-  const { setSurah, surah } = useSurahStore()
+  const { setSurah, filterSurah } = useSurahStore()
 
   // Queries
   const { isLoading, isError, data, error } = useQuery('ListSurah', getAllSurah, {
     onSuccess:
       data => {
         setSurah(data)
-      }
+      },
+    refetchInterval : false,
   })
 
   return (
@@ -25,7 +26,7 @@ const Home: React.FC = () => {
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4'>
         {
           !isLoading  &&
-          surah?.map(item =>
+          filterSurah?.map(item =>
             <SurahCard
               key={item.number}
               name={item.name.transliteration.id}
