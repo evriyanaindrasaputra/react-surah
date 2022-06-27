@@ -19,34 +19,40 @@ export default function index() {
     return acc;
   }, {});
 
-  function handleChange (e : React.ChangeEvent<HTMLSelectElement>) : void {
-      refs[e.target.value].current.scrollIntoView({
-        behavior: 'smooth',
-        block: 'center',
-        inline: "center"
-      });
+  function handleChange(e: React.ChangeEvent<HTMLSelectElement>): void {
+    setValue(e.target.value)
+    refs[e.target.value].current.scrollIntoView({
+      behavior: 'smooth',
+      block: 'center',
+      inline: "center"
+    });
   }
   return (
     <>
       <h2 className='text-center'> Surah {data?.name.transliteration.id}</h2>
-      <label htmlFor="verses-list" className="block mb-2 text-sm font-medium text-gray-900 ">Select an verse</label>
-      <select id="verses-list"
-        value={value}
-        onChange={(e) => handleChange(e)}
-        className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-20 focus:ring-blue-500 focus:border-blue-500  p-2.5
-      ">
+      <div className=' pb-20'>
         {
-          data?.verses.map(item =>
-            <option key={item.number.inSurah} value={item.number.inSurah}>#{item.number.inSurah}</option>
+          data &&
+          data.verses.map((item, idx) =>
+            <VersesCard ref={refs[item.number.inSurah]} key={idx} verse={item} />
           )
         }
-      </select>
-      {
-        data &&
-        data.verses.map((item, idx) =>
-          <VersesCard ref={refs[item.number.inSurah]} key={idx} verse={item}  />
-        )
-      }
+      </div>
+      <div className='fixed bottom-0 left-0 px-2 py-3 w-full bg-gray-300/80 backdrop-filter backdrop-blur z-10'>
+        <div className=' max-w-6xl mx-auto'>
+          <select id="verses-list"
+            value={value}
+            onChange={(e) => handleChange(e)}
+            className="bg-gray-50/80 border block w-full border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500  p-2
+      ">
+            {
+              data?.verses.map(item =>
+                <option key={item.number.inSurah} value={item.number.inSurah}>{item.number.inSurah}</option>
+              )
+            }
+          </select>
+        </div>
+      </div>
     </>
   )
 }

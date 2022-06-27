@@ -1,12 +1,17 @@
 import '@testing-library/jest-dom'
 import { expect, it, describe } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
+import { BrowserRouter } from 'react-router-dom';
 import Navbar from './Navbar'
 
 describe("Navbar", () => {
   it("should show title all the time", () => {
     // Arrange
-    render(<Navbar />);
+    render(
+      <BrowserRouter>
+    <Navbar />
+    </BrowserRouter>
+    );
     const headingText = screen.getByRole('heading', { name: /al qur'an/i })
     
     // Assert

@@ -35,7 +35,7 @@ const Scroll: React.FC = () => {
         onClick={scrollToTop}
         className={classNames(
           isVisible ? 'opacity-100 cursor-pointer' : 'opacity-0 cursor-default',
-          'fixed transition-opacity  bottom-4 right-4 w-10 h-10 shadow-lg rounded-full p-2'
+          'fixed transition-opacity bottom-20 right-8 w-10 h-10 shadow-lg rounded-full p-2'
         )}
       >
         <ArrowUpIcon />
