@@ -1,7 +1,6 @@
 import React from 'react'
 import { ArrowUpIcon } from '@heroicons/react/solid'
 import { classNames } from '~/lib/class-utils';
-
 const Scroll: React.FC = () => {
   const [isVisible, setIsVisible] = React.useState<boolean>(false);
 

@@ -17,7 +17,7 @@ const Home: React.FC = () => {
       data => {
         setSurah(data)
       },
-    refetchInterval : false,
+    refetchInterval: false,
   })
 
   return (
@@ -25,7 +25,7 @@ const Home: React.FC = () => {
       <Hero />
       <div className='grid grid-cols-1 md:grid-cols-3 gap-4 py-4'>
         {
-          !isLoading  &&
+          !isLoading &&
           filterSurah?.map(item =>
             <SurahCard
               key={item.number}
