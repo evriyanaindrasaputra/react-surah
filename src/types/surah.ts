@@ -30,7 +30,6 @@ export interface Verse {
   }
 }
 
-
 export interface Surah {
   name: {
     long: string,
@@ -50,6 +49,10 @@ export interface Surah {
   tafsir: {
     id: string
   }
+}
+
+export interface Verses extends Surah {
+  verses : Array<Verse>
 }
 
 

@@ -1,4 +1,4 @@
-import { Surah } from "~/types/surah"
+import { Surah, Verses } from "~/types/surah"
 import fetcher from './fetcher'
 
 export async function getAllSurah(): Promise<Surah[]> {
@@ -10,7 +10,7 @@ export async function getAllSurah(): Promise<Surah[]> {
   }
 }
 
-export async function getSurah(id? : string): Promise<Surah> {
+export async function getSurah(id? : string): Promise<Verses> {
   try {
     const { data } = await fetcher.get(`surah/${id}`)
     console.log(data.data)
