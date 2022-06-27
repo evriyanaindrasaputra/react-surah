@@ -20,19 +20,21 @@ export default function index() {
   }, {});
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>): void {
-    setValue(e.target.value)
-    refs[e.target.value].current.scrollIntoView({
-      behavior: 'smooth',
-      block: 'center',
-      inline: "center"
-    });
+    if(refs){
+      setValue(e.target.value)
+      refs[e.target.value].current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: "center"
+      });
+    }
   }
   return (
     <>
       <h2 className='text-center'> Surah {data?.name.transliteration.id}</h2>
       <div className=' pb-20'>
         {
-          data &&
+          data && refs &&
           data.verses.map((item, idx) =>
             <VersesCard ref={refs[item.number.inSurah]} key={idx} verse={item} />
           )
