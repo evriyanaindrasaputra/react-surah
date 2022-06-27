@@ -14,7 +14,7 @@ export default function index() {
     enabled: !!id,
   })
 
-  const refs = data?.verses.reduce((acc, value) => {
+  const refs : any = data?.verses.reduce((acc : any, value) => {
     acc[value.number.inSurah] = React.createRef();
     return acc;
   }, {});
@@ -22,7 +22,7 @@ export default function index() {
   function handleChange(e: React.ChangeEvent<HTMLSelectElement>): void {
     if(refs){
       setValue(e.target.value)
-      refs[e.target.value].current.scrollIntoView({
+      refs[+e.target.value].current.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
         inline: "center"
@@ -36,7 +36,7 @@ export default function index() {
         {
           data && refs &&
           data.verses.map((item, idx) =>
-            <VersesCard ref={refs[item.number.inSurah]} key={idx} verse={item} />
+            <VersesCard ref={refs[idx]} key={idx} verse={item} />
           )
         }
       </div>
